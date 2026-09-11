@@ -11,7 +11,7 @@ import ChipFeed from "./ChipFeed";
 import { fireConfetti } from "@/utils/confetti";
 import { Cpu, CheckCircle2, AlertTriangle, ArrowRight, ShieldCheck, Layers, Eye, RotateCcw, Sparkles } from "lucide-react";
 
-export default function ChipCounterApp() {
+export default function ChipCounterApp({ onBack }) {
   const [imagePreview, setImagePreview] = useState(null);
   const [isCounting, setIsCounting] = useState(false);
   const [countResult, setCountResult] = useState(null);
@@ -101,42 +101,44 @@ export default function ChipCounterApp() {
   };
 
   return (
-    <div className="min-h-screen w-full relative flex flex-col justify-between overflow-hidden">
-      {/* Background ambient lighting orbs */}
-      <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full glow-orb-blue pointer-events-none" />
-      <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full glow-orb-purple pointer-events-none" />
-      <div className="absolute top-[40%] right-[15%] w-[350px] h-[350px] rounded-full bg-indigo-600/10 blur-[90px] pointer-events-none" />
+    <div className="min-h-screen w-full relative bg-gradient-to-b from-amber-950 via-orange-900 to-amber-950 text-amber-50 overflow-hidden font-sans flex flex-col justify-between">
+      {/* Symmetric Background Ambient Glowing Orbs (Top & Bottom) */}
+      <div className="absolute top-[-10%] left-[-10%] w-[550px] h-[550px] rounded-full bg-amber-500/25 blur-[140px] pointer-events-none" />
+      <div className="absolute top-[-10%] right-[-10%] w-[550px] h-[550px] rounded-full bg-orange-600/25 blur-[140px] pointer-events-none" />
+      <div className="absolute top-[45%] left-[25%] w-[500px] h-[500px] rounded-full bg-red-600/20 blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] left-[-10%] w-[550px] h-[550px] rounded-full bg-orange-600/25 blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[550px] h-[550px] rounded-full bg-amber-500/25 blur-[140px] pointer-events-none" />
 
       {/* Main Container */}
       <div className="relative z-10 w-full flex flex-col items-center">
-        <Header />
+        <Header onBack={onBack} />
 
         <main className="w-full max-w-5xl mx-auto px-4 py-6 flex flex-col gap-8">
           {/* Hero Tagline */}
           <div className="text-center max-w-2xl mx-auto space-y-3">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold mb-1 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-purple-400" />
-              <span>AI Grounding DINO Object Detector</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-bold mb-1 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-orange-400" />
+              
             </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-              Automated Potato Chip <br className="hidden sm:inline" />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400">
-                Population Counter & Visual Network
+             <br className="hidden sm:inline" />
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-orange-400 to-red-400">
+                The Secret Society of Potato Chips
               </span>
             </h2>
-            <p className="text-sm text-slate-300">
+            <p className="text-sm text-amber-100/90 font-medium">
               Upload any photo of potato chips to count population, annotate bounding boxes, and analyze real-time chip dynamics.
             </p>
           </div>
 
           {/* Form Card */}
-          <div ref={dropzoneRef} className="w-full glass-card rounded-3xl p-6 sm:p-8 flex flex-col gap-6 shadow-2xl border border-white/15">
+          <div ref={dropzoneRef} className="w-full glass-card rounded-3xl p-6 sm:p-8 flex flex-col gap-6 shadow-2xl border-2 border-amber-500/30 bg-gradient-to-br from-amber-950/80 via-slate-950/90 to-orange-950/80">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
               {/* Left Column: Image Upload */}
               <div className="flex flex-col gap-3">
-                <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-                  <Layers className="w-3.5 h-3.5 text-indigo-400" />
-                  Step 1: Input Chip Image
+                <span className="text-xs font-semibold text-amber-200 uppercase tracking-wider flex items-center gap-1.5">
+                  <Layers className="w-3.5 h-3.5 text-amber-400" />
+                  Step 1: Input Chips Image
                 </span>
                 <ImageUploader
                   imageFile={imagePreview?.file}
@@ -146,28 +148,21 @@ export default function ChipCounterApp() {
                 />
               </div>
 
-              {/* Right Column: AI Model Settings & Action Button */}
+              {/* Right Column: AI Chip Showcase & Action Button */}
               <div className="flex flex-col gap-6 justify-between h-full">
-                <div className="flex flex-col gap-6">
-                  <span className="text-xs font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-                    <ShieldCheck className="w-3.5 h-3.5 text-indigo-400" />
-                    Step 2: Model Configuration
+                <div className="flex flex-col gap-3">
+                  <span className="text-xs font-semibold text-amber-200 uppercase tracking-wider flex items-center gap-1.5">
+                    <ShieldCheck className="w-3.5 h-3.5 text-orange-400" />
+                    Step 2: AI Chip Detection Preview
                   </span>
 
-                  {/* Operational Settings Card */}
-                  <div className="rounded-2xl bg-slate-900/40 p-4 border border-white/5 space-y-3">
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="text-slate-400">Model Engine:</span>
-                      <span className="text-indigo-300 font-semibold">IDEA-Research/grounding-dino-base</span>
-                    </div>
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="text-slate-400">Backend Status:</span>
-                      <span className="text-emerald-400 font-semibold">http://localhost:8000</span>
-                    </div>
-                    <div className="flex items-center justify-between text-xs">
-                      <span className="text-slate-400">Prompt:</span>
-                      <span className="text-emerald-400 font-semibold">"potato chip."</span>
-                    </div>
+                  {/* Showcase Image replacing model details */}
+                  <div className="relative w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-amber-500/30 group hover:scale-[1.02] transition-transform duration-300">
+                    <img
+                      src="/images/chip_feelings_talk.jpg"
+                      alt="AI Chip Detection & Feelings Showcase"
+                      className="w-full h-48 sm:h-52 object-cover rounded-2xl"
+                    />
                   </div>
                 </div>
 
@@ -177,15 +172,15 @@ export default function ChipCounterApp() {
                     type="button"
                     onClick={handleCountChips}
                     disabled={!imagePreview || isCounting}
-                    className={`w-full py-4 px-6 rounded-2xl font-bold text-base flex items-center justify-center gap-3 shadow-xl transition-all duration-300 ${
+                    className={`w-full py-4 px-6 rounded-2xl font-black text-base flex items-center justify-center gap-3 shadow-xl transition-all duration-300 ${
                       !imagePreview || isCounting
                         ? "bg-slate-800 text-slate-500 cursor-not-allowed border border-white/5"
-                        : "glass-button-primary text-white cursor-pointer hover:scale-[1.01] active:scale-[0.99]"
+                        : "glass-button-primary text-slate-950 cursor-pointer hover:scale-[1.01] active:scale-[0.99] shadow-[0_0_30px_rgba(245,158,11,0.4)] border-2 border-amber-200"
                     }`}
                   >
                     {isCounting ? (
                       <>
-                        <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        <div className="w-5 h-5 border-2 border-slate-950/30 border-t-slate-950 rounded-full animate-spin" />
                         <span>Running Grounding DINO Model...</span>
                       </>
                     ) : (
@@ -198,7 +193,7 @@ export default function ChipCounterApp() {
                   </button>
 
                   {!imagePreview && (
-                    <p className="text-[11px] text-center text-slate-400">
+                    <p className="text-[11px] text-center text-amber-300/70 font-medium">
                       Upload or select a sample image above to start counting.
                     </p>
                   )}
@@ -219,7 +214,7 @@ export default function ChipCounterApp() {
 
             {/* Real Detection Results Section */}
             {countResult && (
-              <div className="mt-4 pt-6 border-t border-white/10 flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4 duration-300">
+              <div className="mt-4 pt-6 border-t border-amber-500/20 flex flex-col gap-8 animate-in fade-in slide-in-from-bottom-4 duration-300">
                 <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
                   <div className="flex items-center gap-2">
                     <CheckCircle2 className="w-5 h-5 text-emerald-400" />
@@ -230,20 +225,18 @@ export default function ChipCounterApp() {
                     <button
                       type="button"
                       onClick={handleResetAll}
-                      className="px-3 py-1.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-semibold flex items-center gap-1.5 border border-white/10 transition-colors shadow-sm cursor-pointer"
+                      className="px-3 py-1.5 rounded-xl bg-amber-500/20 hover:bg-amber-500/30 text-amber-200 text-xs font-semibold flex items-center gap-1.5 border border-amber-500/30 transition-colors shadow-sm cursor-pointer"
                     >
-                      <RotateCcw className="w-3.5 h-3.5 text-indigo-400" />
+                      <RotateCcw className="w-3.5 h-3.5 text-amber-400" />
                       Reset & Upload Another Image
                     </button>
 
-                    <span className="text-xs text-indigo-300 bg-indigo-950/60 px-3 py-1.5 rounded-xl border border-indigo-500/30 font-medium">
-                      Grounding DINO Model Inference
-                    </span>
+                  
                   </div>
                 </div>
 
                 {/* Response Message */}
-                <div className="p-3.5 rounded-xl bg-indigo-950/30 border border-indigo-500/20 text-xs text-indigo-200 flex items-center gap-2">
+                <div className="p-3.5 rounded-xl bg-amber-950/40 border border-amber-500/30 text-xs text-amber-200 flex items-center gap-2">
                   <span className="font-medium">{countResult.message}</span>
                 </div>
 
@@ -271,22 +264,22 @@ export default function ChipCounterApp() {
 
                 {/* OpenCV Real Annotated Image Display */}
                 {countResult.annotatedImageUrl && (
-                  <div className="relative rounded-2xl bg-slate-950 p-4 border border-emerald-500/30 overflow-hidden flex flex-col gap-3">
+                  <div className="relative rounded-2xl bg-slate-950 p-4 border border-amber-500/30 overflow-hidden flex flex-col gap-3">
                     <div className="flex items-center justify-between">
-                      <span className="text-xs font-semibold text-emerald-400 flex items-center gap-2">
-                        <Eye className="w-4 h-4" /> Real OpenCV Bounding Box Overlay
+                      <span className="text-xs font-semibold text-amber-300 flex items-center gap-2">
+                        <Eye className="w-4 h-4 text-orange-400" /> Real OpenCV Bounding Box Overlay
                       </span>
                       <a
                         href={countResult.annotatedImageUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="text-[11px] font-medium text-indigo-300 hover:text-white underline flex items-center gap-1"
+                        className="text-[11px] font-semibold text-amber-300 hover:text-white underline flex items-center gap-1"
                       >
                         Open Full Image
                       </a>
                     </div>
 
-                    <div className="relative w-full rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center p-2 border border-white/10">
+                    <div className="relative w-full rounded-xl overflow-hidden bg-slate-900 flex items-center justify-center p-2 border border-amber-500/20">
                       <img
                         src={countResult.annotatedImageUrl}
                         alt="OpenCV Annotated Chip Detection Result"
@@ -301,9 +294,9 @@ export default function ChipCounterApp() {
                   <button
                     type="button"
                     onClick={handleResetAll}
-                    className="px-6 py-3 rounded-2xl bg-gradient-to-r from-slate-800 to-slate-900 hover:from-slate-700 hover:to-slate-800 text-white text-xs font-bold flex items-center gap-2 border border-white/10 shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer"
+                    className="px-6 py-3 rounded-2xl bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-100 text-xs font-bold flex items-center gap-2 border border-amber-500/30 shadow-lg hover:scale-105 transition-all duration-200 cursor-pointer"
                   >
-                    <RotateCcw className="w-4 h-4 text-indigo-400" />
+                    <RotateCcw className="w-4 h-4 text-amber-400" />
                     Reset & Upload Another Image
                   </button>
                 </div>
@@ -314,8 +307,8 @@ export default function ChipCounterApp() {
       </div>
 
       {/* Footer */}
-      <footer className="relative z-10 w-full py-6 text-center text-xs text-slate-400 border-t border-white/5 mt-12 bg-slate-950/60 backdrop-blur-md">
-        Chip Population Counter &copy; {new Date().getFullYear()} &bull; Powered by Next.js 15 & FastAPI Grounding DINO
+      <footer className="relative z-10 w-full py-6 text-center text-xs text-amber-300/80 border-t border-amber-500/30 mt-12 bg-amber-950/80 backdrop-blur-md">
+        Chip Population Counter &copy; {new Date().getFullYear()} &bull; Powered by Next.js & FastAPI Grounding DINO
       </footer>
     </div>
   );

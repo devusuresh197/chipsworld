@@ -44,8 +44,8 @@ export default function CountrySelect({ selectedCountry, onSelectCountry }) {
   return (
     <div className="flex flex-col gap-2 w-full" ref={dropdownRef}>
       <div className="flex items-center justify-between">
-        <label className="text-xs font-semibold text-slate-300 uppercase tracking-wider flex items-center gap-1.5">
-          <Globe className="w-3.5 h-3.5 text-indigo-400" />
+        <label className="text-xs font-semibold text-amber-200 uppercase tracking-wider flex items-center gap-1.5">
+          <Globe className="w-3.5 h-3.5 text-amber-400" />
           Target Country / Region
         </label>
 
@@ -53,10 +53,10 @@ export default function CountrySelect({ selectedCountry, onSelectCountry }) {
         <button
           type="button"
           onClick={handleRandomCountry}
-          className="px-2.5 py-1 rounded-lg bg-gradient-to-r from-indigo-500/20 to-purple-500/20 hover:from-indigo-500/30 hover:to-purple-500/30 text-indigo-200 border border-indigo-500/30 text-[11px] font-semibold flex items-center gap-1.5 transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer shadow-sm"
+          className="px-2.5 py-1 rounded-lg bg-gradient-to-r from-amber-500/20 to-orange-500/20 hover:from-amber-500/30 hover:to-orange-500/30 text-amber-200 border border-amber-500/30 text-[11px] font-semibold flex items-center gap-1.5 transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer shadow-sm"
           title="Randomly pick a country"
         >
-          <Shuffle className={`w-3 h-3 text-indigo-400 ${isSpinning ? "animate-spin" : ""}`} />
+          <Shuffle className={`w-3 h-3 text-amber-400 ${isSpinning ? "animate-spin" : ""}`} />
           <span>Random Country</span>
         </button>
       </div>
@@ -66,21 +66,21 @@ export default function CountrySelect({ selectedCountry, onSelectCountry }) {
           type="button"
           onClick={() => setIsOpen(!isOpen)}
           className={`w-full glass-input rounded-xl px-4 py-3 text-left flex items-center justify-between gap-3 transition-all duration-200 ${
-            isOpen ? "border-indigo-500 ring-2 ring-indigo-500/20" : ""
+            isOpen ? "border-amber-400 ring-2 ring-amber-500/20" : ""
           }`}
         >
           <div className="flex items-center gap-3">
             <span className="text-2xl leading-none">{currentCountry.flag}</span>
             <div>
               <div className="text-sm font-semibold text-white">{currentCountry.name}</div>
-              <div className="text-[11px] text-slate-400">{currentCountry.region}</div>
+              <div className="text-[11px] text-amber-200/70">{currentCountry.region}</div>
             </div>
           </div>
-          <ChevronDown className={`w-4 h-4 text-slate-400 transition-transform duration-200 ${isOpen ? "rotate-180 text-indigo-400" : ""}`} />
+          <ChevronDown className={`w-4 h-4 text-amber-400 transition-transform duration-200 ${isOpen ? "rotate-180 text-amber-300" : ""}`} />
         </button>
 
         {isOpen && (
-          <div className="absolute z-50 mt-2 w-full glass-card rounded-2xl p-1.5 border border-white/20 shadow-2xl backdrop-blur-2xl animate-in fade-in zoom-in-95 duration-150">
+          <div className="absolute z-50 mt-2 w-full glass-card rounded-2xl p-1.5 border border-amber-500/30 shadow-2xl backdrop-blur-2xl animate-in fade-in zoom-in-95 duration-150 bg-slate-950/95">
             <div className="max-h-56 overflow-y-auto space-y-1">
               {COUNTRIES.map((country) => {
                 const isSelected = country.name === currentCountry.name;
@@ -92,17 +92,17 @@ export default function CountrySelect({ selectedCountry, onSelectCountry }) {
                       onSelectCountry(country.name);
                       setIsOpen(false);
                     }}
-                    className={`w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition-colors ${
+                    className={`w-full px-3 py-2.5 rounded-xl flex items-center justify-between text-left transition-colors cursor-pointer ${
                       isSelected
-                        ? "bg-indigo-600/30 text-white font-medium border border-indigo-500/40"
-                        : "hover:bg-white/10 text-slate-200"
+                        ? "bg-amber-500/20 text-white font-medium border border-amber-500/40"
+                        : "hover:bg-white/10 text-amber-100"
                     }`}
                   >
                     <div className="flex items-center gap-3">
                       <span className="text-xl leading-none">{country.flag}</span>
                       <span className="text-sm">{country.name}</span>
                     </div>
-                    {isSelected && <Check className="w-4 h-4 text-indigo-400" />}
+                    {isSelected && <Check className="w-4 h-4 text-amber-400" />}
                   </button>
                 );
               })}

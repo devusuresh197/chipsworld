@@ -82,8 +82,8 @@ export default function ChipUniverse({ chips = [] }) {
   return (
     <div className="w-full flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-6 duration-500">
       {/* SECTION 1: BREAKING NEWS TICKER BANNER */}
-      <div className="w-full rounded-2xl bg-gradient-to-r from-amber-500/20 via-purple-600/20 to-pink-500/20 border border-amber-500/30 p-3 flex items-center gap-3 overflow-hidden shadow-lg">
-        <div className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-amber-500 text-slate-950 font-black text-xs uppercase tracking-wider flex-shrink-0 animate-pulse">
+      <div className="w-full rounded-2xl bg-gradient-to-r from-amber-500/20 via-orange-600/20 to-red-500/20 border border-amber-500/30 p-3 flex items-center gap-3 overflow-hidden shadow-lg">
+        <div className="flex items-center gap-1.5 px-3 py-1 rounded-xl bg-amber-400 text-slate-950 font-black text-xs uppercase tracking-wider flex-shrink-0 animate-pulse">
           <Radio className="w-3.5 h-3.5" />
           <span>Breaking News</span>
         </div>
@@ -99,19 +99,19 @@ export default function ChipUniverse({ chips = [] }) {
       </div>
 
       {/* HEADER SECTION */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-amber-500/20 pb-4">
         <div>
-          <span className="text-xs uppercase font-extrabold tracking-widest text-indigo-400 flex items-center gap-1.5 mb-1">
-            <Sparkles className="w-3.5 h-3.5 text-purple-400" />
+          <span className="text-xs uppercase font-extrabold tracking-widest text-amber-400 flex items-center gap-1.5 mb-1">
+            <Sparkles className="w-3.5 h-3.5 text-orange-400" />
             Ecosystem Overview & Live Analytics
           </span>
           <h3 className="text-2xl sm:text-3xl font-black text-white tracking-tight flex items-center gap-2">
-            🌌 <span className="bg-clip-text text-transparent bg-gradient-to-r from-yellow-300 via-pink-400 to-indigo-300">Chip Universe</span> Dashboard
+            🌌 <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-orange-400 to-red-400">Chip Universe</span> Dashboard
           </h3>
         </div>
 
         <div className="flex items-center gap-2">
-          <span className="px-3.5 py-1.5 rounded-full bg-indigo-500/20 border border-indigo-500/30 text-indigo-200 text-xs font-bold shadow-sm flex items-center gap-1.5">
+          <span className="px-3.5 py-1.5 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-200 text-xs font-bold shadow-sm flex items-center gap-1.5">
             <Activity className="w-3.5 h-3.5 text-emerald-400 animate-spin" />
             Live Universe Active
           </span>
@@ -121,10 +121,10 @@ export default function ChipUniverse({ chips = [] }) {
       {/* TOP ROW METRICS GRID */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {/* SECTION 2: TOTAL CHIPS DETECTED METRIC CARD */}
-        <div className="glass-card rounded-3xl p-5 border border-white/15 flex flex-col justify-between gap-4 bg-gradient-to-br from-indigo-950/80 via-slate-900/90 to-purple-950/80 shadow-xl">
+        <div className="glass-card rounded-3xl p-5 border border-amber-500/30 flex flex-col justify-between gap-4 bg-gradient-to-br from-amber-950/80 via-slate-950/90 to-orange-950/80 shadow-xl">
           <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-indigo-300 uppercase tracking-wider flex items-center gap-1.5">
-              <Users className="w-4 h-4 text-indigo-400" /> Population Census
+            <span className="text-xs font-bold text-amber-300 uppercase tracking-wider flex items-center gap-1.5">
+              <Users className="w-4 h-4 text-amber-400" /> Population Census
             </span>
             <span className="text-xl">🥔</span>
           </div>
@@ -133,12 +133,12 @@ export default function ChipUniverse({ chips = [] }) {
             <span className="text-5xl font-black text-white tracking-tight">
               {chips.length}
             </span>
-            <span className="text-xs text-indigo-200 font-semibold">
+            <span className="text-xs text-amber-200 font-semibold">
               Total Chips Detected
             </span>
           </div>
 
-          <div className="flex items-center justify-between text-xs text-slate-300 pt-2 border-t border-white/10">
+          <div className="flex items-center justify-between text-xs text-amber-200/80 pt-2 border-t border-amber-500/20">
             <span>Avg Match Rate:</span>
             <span className="text-emerald-400 font-bold font-mono">
               {(chips.reduce((acc, c) => acc + (c.score || 0.8), 0) / chips.length * 100).toFixed(1)}%
@@ -147,7 +147,7 @@ export default function ChipUniverse({ chips = [] }) {
         </div>
 
         {/* SECTION 3: CHIP OF THE DAY SPOTLIGHT CARD */}
-        <div className="glass-card rounded-3xl p-5 border border-amber-500/30 flex flex-col justify-between gap-3 bg-gradient-to-br from-amber-950/60 via-slate-900/90 to-slate-950/90 shadow-xl relative overflow-hidden group">
+        <div className="glass-card rounded-3xl p-5 border border-amber-500/40 flex flex-col justify-between gap-3 bg-gradient-to-br from-amber-950/80 via-slate-950/90 to-orange-950/80 shadow-xl relative overflow-hidden group">
           <div className="absolute top-0 right-0 px-3 py-1 rounded-bl-2xl bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 font-black text-[10px] uppercase tracking-wider flex items-center gap-1 shadow-md">
             <Crown className="w-3 h-3" /> Chip of the Day
           </div>
@@ -182,13 +182,13 @@ export default function ChipUniverse({ chips = [] }) {
         </div>
 
         {/* SECTION 4: TRENDING CHIP CARD */}
-        <div className="glass-card rounded-3xl p-5 border border-pink-500/30 flex flex-col justify-between gap-3 bg-gradient-to-br from-pink-950/60 via-slate-900/90 to-purple-950/90 shadow-xl relative overflow-hidden group">
-          <div className="absolute top-0 right-0 px-3 py-1 rounded-bl-2xl bg-gradient-to-r from-rose-500 to-pink-500 text-white font-black text-[10px] uppercase tracking-wider flex items-center gap-1 shadow-md">
+        <div className="glass-card rounded-3xl p-5 border border-orange-500/40 flex flex-col justify-between gap-3 bg-gradient-to-br from-orange-950/80 via-slate-950/90 to-red-950/80 shadow-xl relative overflow-hidden group">
+          <div className="absolute top-0 right-0 px-3 py-1 rounded-bl-2xl bg-gradient-to-r from-orange-500 to-red-500 text-white font-black text-[10px] uppercase tracking-wider flex items-center gap-1 shadow-md">
             <Flame className="w-3 h-3 text-yellow-300 animate-pulse" /> Trending Now
           </div>
 
           <div className="flex items-center gap-3 pt-2">
-            <div className="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-pink-500 via-rose-500 to-purple-600 shadow-lg group-hover:scale-110 transition-transform">
+            <div className="relative w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-orange-500 to-red-600 shadow-lg group-hover:scale-110 transition-transform">
               <div className="w-full h-full bg-slate-950 rounded-full flex items-center justify-center text-2xl">
                 🔥
               </div>
@@ -198,50 +198,50 @@ export default function ChipUniverse({ chips = [] }) {
               <h4 className="text-base font-extrabold text-white truncate">
                 {trendingChip.name}
               </h4>
-              <span className="text-xs text-pink-300 font-semibold block truncate">
+              <span className="text-xs text-amber-300 font-semibold block truncate">
                 {trendingChip.username}
               </span>
             </div>
           </div>
 
-          <div className="flex items-center justify-between bg-pink-950/40 p-2.5 rounded-xl border border-pink-500/20 text-xs">
-            <span className="text-pink-200 font-semibold flex items-center gap-1">
-              <TrendingUp className="w-3.5 h-3.5 text-rose-400" /> Virality Score
+          <div className="flex items-center justify-between bg-orange-950/40 p-2.5 rounded-xl border border-orange-500/20 text-xs">
+            <span className="text-orange-200 font-semibold flex items-center gap-1">
+              <TrendingUp className="w-3.5 h-3.5 text-orange-400" /> Virality Score
             </span>
-            <span className="text-rose-300 font-bold font-mono text-sm">99.4%</span>
+            <span className="text-orange-300 font-bold font-mono text-sm">99.4%</span>
           </div>
 
-          <div className="flex items-center justify-between text-xs text-slate-300 pt-1">
-            <span className="text-[11px] text-pink-200">{trendingChip.mood || "Crispy & Bold"}</span>
+          <div className="flex items-center justify-between text-xs text-amber-200 pt-1">
+            <span className="text-[11px] text-amber-200">{trendingChip.mood || "Crispy & Bold"}</span>
             <span className="text-amber-300 font-semibold">{trendingChip.favorite_flavor}</span>
           </div>
         </div>
       </div>
 
       {/* SECTION 5: INTERACTIVE FRIENDSHIP GRAPH VISUALIZER */}
-      <div className="glass-card rounded-3xl p-6 border border-white/15 flex flex-col gap-4 bg-gradient-to-b from-slate-900/90 to-slate-950/90 shadow-2xl">
-        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-white/10 pb-3">
+      <div className="glass-card rounded-3xl p-6 border border-amber-500/30 flex flex-col gap-4 bg-gradient-to-br from-amber-950/80 via-slate-950/90 to-orange-950/80 shadow-2xl">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-2 border-b border-amber-500/20 pb-3">
           <div>
             <h4 className="text-lg font-bold text-white flex items-center gap-2">
-              🕸️ <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300">Friendship & Rivalry Network Graph</span>
+              🕸️ <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-orange-300 to-red-300">Friendship & Rivalry Network Graph</span>
             </h4>
-            <p className="text-xs text-slate-300">
+            <p className="text-xs text-amber-200/70">
               Interactive relationship mapping based on chip visual proximity and personality traits.
             </p>
           </div>
 
-          <span className="text-xs text-indigo-300 font-mono bg-indigo-950/60 px-3 py-1 rounded-xl border border-indigo-500/30">
+          <span className="text-xs text-amber-300 font-mono bg-amber-950/80 px-3 py-1 rounded-xl border border-amber-500/30 font-semibold">
             {chips.length} Active Nodes
           </span>
         </div>
 
         {/* SVG Network Visualizer */}
-        <div className="relative w-full h-[260px] bg-slate-950/80 rounded-2xl border border-white/10 overflow-hidden flex items-center justify-center p-4">
+        <div className="relative w-full h-[260px] bg-slate-950/90 rounded-2xl border border-amber-500/20 overflow-hidden flex items-center justify-center p-4">
           <svg className="absolute inset-0 w-full h-full pointer-events-none">
             <defs>
               <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stopColor="#818cf8" stopOpacity="0.6" />
-                <stop offset="100%" stopColor="#ec4899" stopOpacity="0.6" />
+                <stop offset="0%" stopColor="#f59e0b" stopOpacity="0.7" />
+                <stop offset="100%" stopColor="#ef4444" stopOpacity="0.7" />
               </linearGradient>
             </defs>
 
@@ -284,12 +284,12 @@ export default function ChipUniverse({ chips = [] }) {
                   onClick={() => setSelectedNode(chip)}
                   className="group relative flex flex-col items-center gap-1 transition-all duration-300 hover:scale-125 focus:outline-none cursor-pointer"
                 >
-                  <div className="w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-indigo-500 via-purple-500 to-pink-500 shadow-xl group-hover:rotate-12 transition-transform">
+                  <div className="w-12 h-12 rounded-full p-[2px] bg-gradient-to-tr from-amber-400 via-orange-500 to-red-500 shadow-xl group-hover:rotate-12 transition-transform">
                     <div className="w-full h-full bg-slate-950 rounded-full flex items-center justify-center text-xl">
                       {avatarEmoji}
                     </div>
                   </div>
-                  <span className="text-[11px] font-bold text-white bg-slate-900/90 px-2 py-0.5 rounded-md border border-white/10 shadow-md">
+                  <span className="text-[11px] font-bold text-amber-100 bg-slate-900/90 px-2 py-0.5 rounded-md border border-amber-500/30 shadow-md">
                     {chip.name.split(" ")[0]}
                   </span>
                 </button>
@@ -300,18 +300,18 @@ export default function ChipUniverse({ chips = [] }) {
 
         {/* Selected Node Tooltip Detail */}
         {selectedNode && (
-          <div className="p-3.5 rounded-2xl bg-indigo-950/50 border border-indigo-500/30 text-xs flex items-center justify-between animate-in fade-in duration-200">
+          <div className="p-3.5 rounded-2xl bg-amber-950/60 border border-amber-500/30 text-xs flex items-center justify-between animate-in fade-in duration-200">
             <div className="flex items-center gap-3">
               <span className="text-2xl">🥔</span>
               <div>
                 <h5 className="font-bold text-white">{selectedNode.name} ({selectedNode.username})</h5>
-                <p className="text-indigo-200 text-[11px]">{selectedNode.personality} • {selectedNode.relationship_status || "Single & Crispy"}</p>
+                <p className="text-amber-200 text-[11px]">{selectedNode.personality} • {selectedNode.relationship_status || "Single & Crispy"}</p>
               </div>
             </div>
             <button
               type="button"
               onClick={() => setSelectedNode(null)}
-              className="px-2.5 py-1 rounded-lg bg-white/10 text-slate-300 hover:text-white text-[10px] font-semibold"
+              className="px-2.5 py-1 rounded-lg bg-amber-500/20 text-amber-200 hover:text-white text-[10px] font-semibold cursor-pointer"
             >
               Close
             </button>
@@ -322,12 +322,12 @@ export default function ChipUniverse({ chips = [] }) {
       {/* BOTTOM ROW: GOSSIP FEED & GROUP CHATS */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* SECTION 6: LATEST GOSSIP FEED */}
-        <div className="glass-card rounded-3xl p-5 border border-white/15 flex flex-col gap-4 bg-slate-900/80 shadow-xl">
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+        <div className="glass-card rounded-3xl p-5 border border-amber-500/30 flex flex-col gap-4 bg-gradient-to-br from-amber-950/80 via-slate-950/90 to-orange-950/80 shadow-xl">
+          <div className="flex items-center justify-between border-b border-amber-500/20 pb-3">
             <h4 className="text-base font-bold text-white flex items-center gap-2">
-              🤫 <span className="bg-clip-text text-transparent bg-gradient-to-r from-pink-300 to-purple-300">Latest Snack Gossip</span>
+              🤫 <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-orange-300">Latest Snack Gossip</span>
             </h4>
-            <span className="text-[11px] text-pink-300 bg-pink-950/60 px-2.5 py-1 rounded-full border border-pink-500/30 font-semibold">
+            <span className="text-[11px] text-amber-300 bg-amber-950/80 px-2.5 py-1 rounded-full border border-amber-500/30 font-semibold">
               Live Whispers
             </span>
           </div>
@@ -338,20 +338,20 @@ export default function ChipUniverse({ chips = [] }) {
               return (
                 <div
                   key={gossip.id}
-                  className="p-3.5 rounded-2xl bg-slate-950/60 border border-white/5 flex flex-col gap-2 transition-all hover:border-pink-500/30"
+                  className="p-3.5 rounded-2xl bg-slate-950/60 border border-amber-500/20 flex flex-col gap-2 transition-all hover:border-amber-400/40"
                 >
                   <div className="flex items-center justify-between">
                     <div className="flex items-center gap-2">
                       <span className="text-base">{gossip.avatar}</span>
                       <span className="text-xs font-bold text-white">{gossip.author}</span>
-                      <span className="text-[10px] text-slate-400">{gossip.time}</span>
+                      <span className="text-[10px] text-amber-200/60 font-mono">{gossip.time}</span>
                     </div>
 
                     <button
                       type="button"
                       onClick={() => toggleGossipLike(gossip.id)}
-                      className={`flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full transition-colors ${
-                        isLiked ? "bg-rose-500/20 text-rose-300 font-bold" : "text-slate-400 hover:text-white"
+                      className={`flex items-center gap-1 text-[11px] px-2 py-0.5 rounded-full transition-colors cursor-pointer ${
+                        isLiked ? "bg-rose-500/20 text-rose-300 font-bold" : "text-amber-200/70 hover:text-white"
                       }`}
                     >
                       <Heart className={`w-3 h-3 ${isLiked ? "fill-rose-500 text-rose-500" : ""}`} />
@@ -359,11 +359,11 @@ export default function ChipUniverse({ chips = [] }) {
                     </button>
                   </div>
 
-                  <p className="text-xs text-slate-300 leading-relaxed italic">
+                  <p className="text-xs text-amber-100/90 leading-relaxed italic">
                     "{gossip.text}"
                   </p>
 
-                  <span className="text-[10px] text-indigo-300 font-mono">
+                  <span className="text-[10px] text-amber-300 font-mono">
                     📍 {gossip.location}
                   </span>
                 </div>
@@ -373,12 +373,12 @@ export default function ChipUniverse({ chips = [] }) {
         </div>
 
         {/* SECTION 7: GROUP CHATS PREVIEW */}
-        <div className="glass-card rounded-3xl p-5 border border-white/15 flex flex-col gap-4 bg-slate-900/80 shadow-xl">
-          <div className="flex items-center justify-between border-b border-white/10 pb-3">
+        <div className="glass-card rounded-3xl p-5 border border-amber-500/30 flex flex-col gap-4 bg-gradient-to-br from-amber-950/80 via-slate-950/90 to-orange-950/80 shadow-xl">
+          <div className="flex items-center justify-between border-b border-amber-500/20 pb-3">
             <h4 className="text-base font-bold text-white flex items-center gap-2">
-              💬 <span className="bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 to-purple-300">Active Group Channels</span>
+              💬 <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 to-orange-300">Active Group Channels</span>
             </h4>
-            <span className="text-[11px] text-indigo-300 bg-indigo-950/60 px-2.5 py-1 rounded-full border border-indigo-500/30 font-semibold">
+            <span className="text-[11px] text-amber-300 bg-amber-950/80 px-2.5 py-1 rounded-full border border-amber-500/30 font-semibold">
               3 Channels
             </span>
           </div>
@@ -387,21 +387,21 @@ export default function ChipUniverse({ chips = [] }) {
             {groupChats.map((chat, cIdx) => (
               <div
                 key={cIdx}
-                className="p-3.5 rounded-2xl bg-slate-950/60 border border-white/5 flex items-center justify-between gap-3 hover:border-indigo-500/30 transition-all group"
+                className="p-3.5 rounded-2xl bg-slate-950/60 border border-amber-500/20 flex items-center justify-between gap-3 hover:border-amber-400/40 transition-all group"
               >
                 <div className="flex flex-col gap-0.5 truncate">
                   <div className="flex items-center gap-2">
-                    <span className="text-xs font-extrabold text-indigo-300 group-hover:text-white transition-colors">
+                    <span className="text-xs font-extrabold text-amber-300 group-hover:text-white transition-colors">
                       {chat.name}
                     </span>
-                    <span className="px-2 py-0.5 rounded-md bg-indigo-500/20 text-indigo-200 text-[9px] font-extrabold tracking-wider">
+                    <span className="px-2 py-0.5 rounded-md bg-amber-500/20 text-amber-200 text-[9px] font-extrabold tracking-wider">
                       {chat.badge}
                     </span>
                   </div>
-                  <p className="text-xs text-slate-400 truncate">{chat.topic}</p>
+                  <p className="text-xs text-amber-200/70 truncate">{chat.topic}</p>
                 </div>
 
-                <span className="text-[11px] font-semibold text-slate-300 flex-shrink-0 bg-white/5 px-2.5 py-1 rounded-xl">
+                <span className="text-[11px] font-semibold text-amber-200 flex-shrink-0 bg-white/5 px-2.5 py-1 rounded-xl">
                   {chat.members}
                 </span>
               </div>

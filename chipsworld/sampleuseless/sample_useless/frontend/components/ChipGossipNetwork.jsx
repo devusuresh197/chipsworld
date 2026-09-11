@@ -52,22 +52,22 @@ export default function ChipGossipNetwork({ chips = [], imageSize = { width: 800
   };
 
   return (
-    <div className="w-full glass-card rounded-3xl p-5 sm:p-6 border border-white/15 flex flex-col gap-5 bg-gradient-to-b from-slate-900/95 via-slate-900/90 to-slate-950/95 shadow-2xl animate-in fade-in duration-300">
+    <div className="w-full glass-card rounded-3xl p-5 sm:p-6 border border-amber-500/30 flex flex-col gap-5 bg-gradient-to-br from-amber-950/80 via-slate-950/90 to-orange-950/80 shadow-2xl animate-in fade-in duration-300">
       {/* COMPACT TOP HEADER */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-white/10 pb-4">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-amber-500/20 pb-4">
         <div>
-          <span className="text-xs uppercase font-extrabold tracking-widest text-indigo-400 flex items-center gap-1.5 mb-1">
-            <Radio className="w-3.5 h-3.5 text-rose-400 animate-pulse" />
-            Compact Live Social Stream
+          <span className="text-xs uppercase font-extrabold tracking-widest text-amber-400 flex items-center gap-1.5 mb-1">
+            <Radio className="w-3.5 h-3.5 text-orange-400 animate-pulse" />
+         
           </span>
           <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight flex items-center gap-2">
-            📡 <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-300 via-indigo-300 to-pink-300">Chip Gossip Network</span>
+            📡 <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-orange-300 to-red-400">Chip Gossip Network</span>
           </h3>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-500/10 border border-indigo-500/30 text-indigo-300 text-xs font-semibold">
-            <Users className="w-3.5 h-3.5 text-indigo-400" />
+          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-300 text-xs font-semibold">
+            <Users className="w-3.5 h-3.5 text-amber-400" />
             <span>{chips.length} Chips Online</span>
           </div>
 
@@ -80,13 +80,13 @@ export default function ChipGossipNetwork({ chips = [], imageSize = { width: 800
 
       {/* TRENDING HASHTAGS ROW */}
       <div className="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar">
-        <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider flex items-center gap-1 flex-shrink-0">
-          <Hash className="w-3 h-3 text-pink-400" /> Trending:
+        <span className="text-[11px] font-bold text-amber-300 uppercase tracking-wider flex items-center gap-1 flex-shrink-0">
+          <Hash className="w-3 h-3 text-orange-400" /> Trending:
         </span>
         {trendingHashtags.map((tag, idx) => (
           <span
             key={idx}
-            className="px-2.5 py-0.5 rounded-lg bg-white/5 border border-white/10 text-purple-200 text-xs font-semibold flex-shrink-0"
+            className="px-2.5 py-0.5 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-200 text-xs font-semibold flex-shrink-0"
           >
             {tag}
           </span>
@@ -100,14 +100,14 @@ export default function ChipGossipNetwork({ chips = [], imageSize = { width: 800
           return (
             <div
               key={post.id || idx}
-              className="rounded-2xl p-4 border border-white/10 bg-slate-950/70 flex flex-col justify-between gap-3 hover:border-indigo-500/30 transition-all duration-300 shadow-md relative group animate-in fade-in duration-300"
+              className="rounded-2xl p-4 border border-amber-500/20 bg-slate-950/70 flex flex-col justify-between gap-3 hover:border-amber-400/40 transition-all duration-300 shadow-md relative group animate-in fade-in duration-300"
             >
               {/* Category & Timestamp */}
               <div className="flex items-center justify-between border-b border-white/5 pb-2">
-                <span className={`px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider border ${post.category?.bg || "bg-indigo-500/20 text-indigo-300"}`}>
+                <span className={`px-2 py-0.5 rounded-md text-[10px] font-black uppercase tracking-wider border ${post.category?.bg || "bg-amber-500/20 text-amber-300 border-amber-500/30"}`}>
                   {post.category?.label || "👀 Rumor"}
                 </span>
-                <span className="text-[10px] text-slate-400 font-mono">
+                <span className="text-[10px] text-amber-200/60 font-mono">
                   {post.timestamp || "Just now"}
                 </span>
               </div>
@@ -119,10 +119,10 @@ export default function ChipGossipNetwork({ chips = [], imageSize = { width: 800
                     <span className="text-base flex-shrink-0 mt-0.5">{msg.avatar}</span>
                     <div className="flex flex-col">
                       <span className="font-bold text-white text-[11px] flex items-center gap-1">
-                        {mIdx > 0 && <CornerDownRight className="w-2.5 h-2.5 text-indigo-400" />}
+                        {mIdx > 0 && <CornerDownRight className="w-2.5 h-2.5 text-amber-400" />}
                         {msg.sender}:
                       </span>
-                      <p className="text-slate-300 italic text-[11px] leading-snug">
+                      <p className="text-amber-100/90 italic text-[11px] leading-snug">
                         "{msg.text}"
                       </p>
                     </div>
@@ -131,7 +131,7 @@ export default function ChipGossipNetwork({ chips = [], imageSize = { width: 800
               </div>
 
               {/* Footer Actions */}
-              <div className="pt-2 border-t border-white/5 flex items-center justify-between text-xs text-slate-400">
+              <div className="pt-2 border-t border-white/5 flex items-center justify-between text-xs text-amber-200/70">
                 <span className="text-sm">{post.reactionEmoji || "🔥"}</span>
                 <button
                   type="button"
@@ -139,7 +139,7 @@ export default function ChipGossipNetwork({ chips = [], imageSize = { width: 800
                   className={`flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold border transition-colors cursor-pointer ${
                     isLiked
                       ? "bg-rose-500/20 text-rose-300 border-rose-500/40"
-                      : "bg-white/5 hover:bg-white/10 text-slate-300 border-white/10"
+                      : "bg-white/5 hover:bg-white/10 text-amber-200 border-amber-500/20"
                   }`}
                 >
                   <Heart className={`w-3 h-3 ${isLiked ? "fill-rose-500 text-rose-500" : ""}`} />

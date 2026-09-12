@@ -62,7 +62,7 @@ export default function ChipCounterApp({ onBack }) {
         throw new Error("No image file provided.");
       }
 
-      const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:8000";
+      const backendUrl = (process.env.NEXT_PUBLIC_BACKEND_URL || "https://chipsworld.vercel.app").replace(/\/$/, "");
 
       const response = await fetch(`${backendUrl}/count`, {
         method: "POST",
@@ -76,11 +76,16 @@ export default function ChipCounterApp({ onBack }) {
 
       const data = await response.json();
 
+      const rawUrl = data.annotated_image_url;
+      const formattedAnnotatedUrl = rawUrl
+        ? (rawUrl.startsWith("data:") || rawUrl.startsWith("http") ? rawUrl : `${backendUrl}${rawUrl}`)
+        : null;
+
       setCountResult({
         totalChips: data.count,
         status: data.status,
         message: data.message,
-        annotatedImageUrl: data.annotated_image_url ? `${backendUrl}${data.annotated_image_url}` : null,
+        annotatedImageUrl: formattedAnnotatedUrl,
         chips: data.chips || [],
         boxes: data.boxes || [],
         scores: data.scores || [],
@@ -93,7 +98,7 @@ export default function ChipCounterApp({ onBack }) {
     } catch (err) {
       console.error("FastAPI Backend Error:", err);
       setError(
-        err.message || "Could not connect to FastAPI backend. Make sure uvicorn is running on http://localhost:8000."
+        err.message || `Could not connect to backend at ${backendUrl}.`
       );
     } finally {
       setIsCounting(false);

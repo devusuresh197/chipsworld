@@ -67,23 +67,23 @@ For Software:
 
 # Screenshots (Add at least 3)
 
-![Chip World Landing Page](./chipsworld/sampleuseless/sample_useless/frontend/public/images/image.png)
-*Odi Da Chips Hero Landing Page featuring symmetric reddish-orange ambient glow and modern typography*
+<img src="chipsworld/sampleuseless/sample_useless/frontend/public/images/image.png" alt="Chip World Landing Page" width="100%" />
+<p><em>Odi Da Chips Hero Landing Page featuring symmetric reddish-orange ambient glow and modern typography</em></p>
 
-![AI Chip Population Counter](./chipsworld/sampleuseless/sample_useless/frontend/public/images/image_copy.png)
-*Real-time Grounding DINO / OpenCV Chip Detection with bounding box geometry and funny demographic profiles*
+<img src="chipsworld/sampleuseless/sample_useless/frontend/public/images/image_copy.png" alt="AI Chip Population Counter" width="100%" />
+<p><em>Real-time Grounding DINO / OpenCV Chip Detection with bounding box geometry and funny demographic profiles</em></p>
 
-![Chip Universe & Gossip Network](./chipsworld/sampleuseless/sample_useless/frontend/public/images/cheese_dip_trap.png)
-*Interactive ChipBook social cards, Chip Feed, and Chip Gossip Network*
+<img src="chipsworld/sampleuseless/sample_useless/frontend/public/images/cheese_dip_trap.png" alt="Chip Universe & Gossip Network" width="100%" />
+<p><em>Interactive ChipBook social cards, Chip Feed, and Chip Gossip Network</em></p>
 
-![Chip World Workflow Architecture](./chipsworld/sampleuseless/sample_useless/frontend/public/images/potato.png)
-*System Architecture Workflow: Next.js Frontend -> FastAPI Vercel Serverless Function -> OpenCV / Grounding DINO Computer Vision Engine -> Base64 Data URL Response*
+<img src="chipsworld/sampleuseless/sample_useless/frontend/public/images/potato.png" alt="Chip World Workflow Architecture" width="100%" />
+<p><em>System Architecture Workflow: Next.js Frontend -> FastAPI Vercel Serverless Function -> OpenCV / Grounding DINO Computer Vision Engine -> Base64 Data URL Response</em></p>
 
 # Build Photos
-![Components](./chipsworld/sampleuseless/sample_useless/frontend/public/images/whatsapp_build_components.jpeg)
+<img src="chipsworld/sampleuseless/sample_useless/frontend/public/images/whatsapp_build_components.jpeg" alt="Components" width="100%" />
 
-![Final Build](./chipsworld/sampleuseless/sample_useless/frontend/public/images/chip_feelings_talk.jpg)
-*The final full-stack web application: Real-time AI chip population counter, zero-shot Grounding DINO detection, and funny chip demographic profiles running live on Vercel.*
+<img src="chipsworld/sampleuseless/sample_useless/frontend/public/images/chip_feelings_talk.jpg" alt="Final Build" width="100%" />
+<p><em>The final full-stack web application: Real-time AI chip population counter, zero-shot Grounding DINO detection, and funny chip demographic profiles running live on Vercel.</em></p>
 
 ### Project Demo
 # Video

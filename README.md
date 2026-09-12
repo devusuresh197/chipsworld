@@ -67,22 +67,22 @@ For Software:
 
 # Screenshots (Add at least 3)
 
-![Chip World Landing Page](chipsworld/sampleuseless/sample_useless/frontend/public/images/image.png)
+![Chip World Landing Page](./chipsworld/sampleuseless/sample_useless/frontend/public/images/image.png)
 *Odi Da Chips Hero Landing Page featuring symmetric reddish-orange ambient glow and modern typography*
 
-![AI Chip Population Counter](chipsworld/sampleuseless/sample_useless/frontend/public/images/image%20copy.png)
+![AI Chip Population Counter](./chipsworld/sampleuseless/sample_useless/frontend/public/images/image_copy.png)
 *Real-time Grounding DINO / OpenCV Chip Detection with bounding box geometry and funny demographic profiles*
 
-![Chip Universe & Gossip Network](chipsworld/sampleuseless/sample_useless/frontend/public/images/cheese_dip_trap.png)
+![Chip Universe & Gossip Network](./chipsworld/sampleuseless/sample_useless/frontend/public/images/cheese_dip_trap.png)
 *Interactive ChipBook social cards, Chip Feed, and Chip Gossip Network*
 
-![Chip World Workflow Architecture](chipsworld/sampleuseless/sample_useless/frontend/public/images/potato.png)
+![Chip World Workflow Architecture](./chipsworld/sampleuseless/sample_useless/frontend/public/images/potato.png)
 *System Architecture Workflow: Next.js Frontend -> FastAPI Vercel Serverless Function -> OpenCV / Grounding DINO Computer Vision Engine -> Base64 Data URL Response*
 
 # Build Photos
-![Components](chipsworld/sampleuseless/sample_useless/frontend/public/images/WhatsApp%20Image%202026-09-12%20at%206.55.48%20AM.jpeg)
+![Components](./chipsworld/sampleuseless/sample_useless/frontend/public/images/whatsapp_build_components.jpeg)
 
-![Final Build](chipsworld/sampleuseless/sample_useless/frontend/public/images/chip_feelings_talk.jpg)
+![Final Build](./chipsworld/sampleuseless/sample_useless/frontend/public/images/chip_feelings_talk.jpg)
 *The final full-stack web application: Real-time AI chip population counter, zero-shot Grounding DINO detection, and funny chip demographic profiles running live on Vercel.*
 
 ### Project Demo
